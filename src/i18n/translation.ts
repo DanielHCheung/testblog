@@ -9,6 +9,7 @@ import { th } from "./languages/th";
 import { tr } from "./languages/tr";
 import { vi } from "./languages/vi";
 import { zh_CN } from "./languages/zh_CN";
+import { zh_SG } from "./languages/zh_SG";
 import { zh_TW } from "./languages/zh_TW";
 
 export type Translation = {
@@ -24,6 +25,7 @@ const map: { [key: string]: Translation } = {
 	en_gb: en,
 	en_au: en,
 	zh_cn: zh_CN,
+	zh_sg: zh_SG,
 	zh_tw: zh_TW,
 	ja: ja,
 	ja_jp: ja,
