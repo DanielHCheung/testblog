@@ -7,6 +7,7 @@ export type SiteConfig = {
 	lang:
 		| "en"
 		| "zh_CN"
+		| "zh_SG"
 		| "zh_TW"
 		| "ja"
 		| "ko"
