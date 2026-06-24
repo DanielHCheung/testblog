@@ -15,11 +15,9 @@ tags = params.has("tag") ? params.getAll("tag") : [];
 categories = params.has("category") ? params.getAll("category") : [];
 const uncategorized = params.get("uncategorized");
 
-type Post = PostForList;
-
 interface Group {
 	year: number;
-	posts: Post[];
+	posts: PostForList[];
 }
 
 let groups: Group[] = [];
@@ -35,7 +33,7 @@ function formatTag(tagList: string[]) {
 }
 
 onMount(async () => {
-	let filteredPosts: Post[] = sortedPosts;
+	let filteredPosts: PostForList[] = sortedPosts;
 
 	if (tags.length > 0) {
 		filteredPosts = filteredPosts.filter(
@@ -64,7 +62,7 @@ onMount(async () => {
 			acc[year].push(post);
 			return acc;
 		},
-		{} as Record<number, Post[]>,
+		{} as Record<number, PostForList[]>,
 	);
 
 	const groupedPostsArray = Object.keys(grouped).map((yearStr) => ({
